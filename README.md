@@ -171,3 +171,47 @@ git checkout main
 git merge new-feature
 git push origin main
 ```
+
+## Testing Plan
+
+To ensure the Fresh-Share platform works as intended, we performed a series of manual and API-based tests. Key tests include:
+
+Role-Based Login: Vendors and Charities are redirected to their respective dashboards, with usernames stored dynamically for personalization.
+
+Food Posting Workflow: Vendors can post surplus food items with validation for all required fields; the system prevents incomplete submissions.
+
+Charity Dashboard Display: All posted food items appear correctly with vendor names, quantities, locations, and pickup times, and updates automatically via an observer-like refresh mechanism.
+
+Backend API Validation: Endpoints such as /login and /add-food return expected JSON responses and persist data in the SQLite database.
+
+Frontend Verification: Pages are visually clean, inputs aligned, buttons functional, and hover effects applied.
+
+Error Handling: Alerts and messages display when fields are missing or the backend is unreachable.
+
+Additional checks include cross-browser verification, role-based access testing, and basic stress tests to confirm the system remains responsive under multiple submissions. These tests ensure reliability, usability, and correctness of the application for end users.
+
+## API Testing 
+ Example: Test /add-food Endpoint
+ ```bash
+ POST http://127.0.0.1:5000/add-food
+Content-Type: application/json
+
+{
+  "vendor_name": "Alice",
+  "food_name": "Bread",
+  "quantity": "10",
+  "location": "Downtown",
+  "pickup_time": "3 PM"
+}
+```
+
+## Test /login Endpoint
+```bash
+POST http://127.0.0.1:5000/login
+Content-Type: application/json
+
+{
+  "username": "Alice",
+  "role": "vendor"
+}
+```
