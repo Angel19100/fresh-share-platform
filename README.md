@@ -20,3 +20,14 @@ A Hyperlocal Food Waste Exchange Platform designed to reduce food waste by conne
 3. Run backend:
    python backend/app.py
 4. Open frontend/index.html in browser
+
+## Technology Stack
+
+Frontend: HTML, CSS, JavaScript
+Backend: Python (Flask)
+Database: SQLite (lightweight and embedded)
+Version Control: Git (GitHub)
+Containerization: Docker (optional)
+Testing: Manual test cases + Postman for API testing
+giIDE: VS Code
+
