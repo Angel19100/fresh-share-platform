@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vendor Dashboard - Fresh Share</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    Fresh-Share Vendor Dashboard
+    <div id="vendorName" style="font-size:0.9em; font-weight:normal;"></div>
+</header>
+
+<div class="card">
+    <h3>Post Surplus Food</h3>
+    <input id="food" placeholder="Food Name">
+    <input id="quantity" placeholder="Quantity">
+    <input id="location" placeholder="Location">
+    <input id="time" placeholder="Pickup Time">
+    <button onclick="postFood()">Post Food</button>
+</div>
+
+<script src="script.js"></script>
+<script>
+    // Show logged-in vendor name at top
+    const vendorNameDiv = document.getElementById("vendorName");
+    const username = localStorage.getItem("username");
+    if(username) {
+        vendorNameDiv.innerHTML = "Logged in as: <strong>" + username + "</strong>";
+    } else {
+        vendorNameDiv.innerHTML = "Logged in as: <strong>Vendor</strong>";
+    }
+
+    // postFood function already in script.js uses localStorage username dynamically
+</script>
+</body>
+</html>

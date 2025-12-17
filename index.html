@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fresh-Share Network</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>🍞 Fresh-Share Network</h1>
+    <p>Hyperlocal Food Waste Exchange Platform</p>
+</header>
+
+<section class="form-section">
+    <h2>Post Surplus Food</h2>
+
+    <input type="text" id="vendor" placeholder="Vendor Name">
+    <input type="text" id="food" placeholder="Food Item">
+    <input type="text" id="quantity" placeholder="Quantity">
+    <input type="text" id="location" placeholder="Location">
+    <input type="text" id="time" placeholder="Pickup Time">
+
+    <button onclick="postFood()">Post Food</button>
+</section>
+
+<section class="list-section">
+    <h2>Available Food Nearby</h2>
+    <div id="foodList"></div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>

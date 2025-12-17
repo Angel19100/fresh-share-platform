@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Charity Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>Charity Dashboard</header>
+<div class="card">
+    <h3>Available Surplus Food</h3>
+    <div id="foodList"></div>
+</div>
+<script>
+    // Load food automatically on charity page
+    function loadFood() {
+        fetch("http://127.0.0.1:5000/food-list")
+        .then(res => res.json())
+        .then(data => {
+            const list = document.getElementById("foodList");
+            list.innerHTML = "";
+            data.forEach(item => {
+    list.innerHTML += `
+        <div class="food-card">
+            <h4>${item.food_name} 🍲</h4>
+            <p><strong>Vendor:</strong> ${item.vendor_name}</p>
+            <p><strong>Quantity:</strong> ${item.quantity}</p>
+            <p><strong>Location:</strong> ${item.location}</p>
+            <p><strong>Pickup Time:</strong> ${item.pickup_time}</p>
+        </div>
+    `;
+});
+        });
+    }
+    loadFood();
+</script>
+<link rel="stylesheet" href="style.css">
+</body>
+</html>
