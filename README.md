@@ -215,3 +215,27 @@ Content-Type: application/json
   "role": "vendor"
 }
 ```
+
+## Docker
+
+Docker is a containerization platform that allows an application and all its dependencies (libraries, runtime, configurations) to be packaged into a single unit called a container.
+This ensures that the application runs the same way on any computer, regardless of the operating system or environment
+ ## Docker Compose Configuration
+```bash
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "5000:5000"
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "8080:80"
+```
+ ## To start the entire system:
+
+ ```bash
+ docker compose up --build
+ ```
+ 
